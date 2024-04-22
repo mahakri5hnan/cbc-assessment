@@ -1,0 +1,13 @@
+replicas: 1
+
+image:
+  repository: nginx
+  tag: latest
+
+service:
+  type: ClusterIP
+
+ingress:
+  enabled: false
+  host: projectx.com
+  path: /
