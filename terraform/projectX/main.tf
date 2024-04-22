@@ -2,12 +2,12 @@ variable "org-proj-env" {
   default = "org-projx-dev"
 }
 variable "region" {
-  default = "us-east"
+  default = "us-east-1"
 }
 
 locals {
   common_name         = format("%s", var.org-proj-env)
-  vpc_id              = ""   
+  vpc_id              = module.vpc.vpc_id   
   private_subnet_ids  = module.vpc.private_subnet_ids
   public_subnet_ids   = module.vpc.public_subnet_ids
   common_tags         = { "organisation" : "OrgA", "project" : "projectX" }    
